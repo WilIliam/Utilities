@@ -5,9 +5,11 @@ using UnityEngine;
 public class BoolEventChannel : ScriptableObject
 {
     public Action<bool> OnEventRaised;
+    public bool isActive;
 
     public void RaiseEvent(bool isBool)
     {
         OnEventRaised?.Invoke(isBool);
+        isActive = isBool;
     }
 }
